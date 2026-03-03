@@ -1,13 +1,18 @@
 import { motion } from "framer-motion";
-import { Building2, TreePine, Waves, Home, Maximize, Sun } from "lucide-react";
+import iconClubhouse from "@/assets/icon-clubhouse.png";
+import iconLeisure from "@/assets/icon-leisure.png";
+import iconBalcony from "@/assets/icon-balcony.png";
+import iconPool from "@/assets/icon-pool.png";
+import iconCarpet from "@/assets/icon-carpet.png";
+import iconOpenspace from "@/assets/icon-openspace.png";
 
 const features = [
-  { icon: Building2, title: "63,000+ Sqft Clubhouse", desc: "World-class amenities under one roof" },
-  { icon: TreePine, title: "~77% Open Space", desc: "Lush green landscapes & gardens" },
-  { icon: Waves, title: "Temperature Controlled Pools", desc: "Year-round swimming comfort" },
-  { icon: Home, title: "Large Living Balconies", desc: "Expansive outdoor living spaces" },
-  { icon: Maximize, title: "~75% Carpet Efficiency", desc: "Maximized usable living area" },
-  { icon: Sun, title: "2+ Acres Leisure & Amenities", desc: "Dedicated recreation spaces" },
+  { icon: iconClubhouse, title: "~ 63,000+ Sqft Clubhouse", desc: "World-class amenities under one roof" },
+  { icon: iconLeisure, title: "Over 2 Acres for Leisure & Amenities", desc: "Dedicated recreation spaces" },
+  { icon: iconBalcony, title: "Large Living Balconies", desc: "Expansive outdoor living spaces" },
+  { icon: iconPool, title: "Temperature Controlled Pools", desc: "Year-round swimming comfort" },
+  { icon: iconCarpet, title: "~ 75% Carpet Area Efficiency", desc: "Maximized usable living area" },
+  { icon: iconOpenspace, title: "~77% Open Space", desc: "Lush green landscapes & gardens" },
 ];
 
 const FeaturesSection = () => {
@@ -33,9 +38,9 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-lg border border-primary-foreground/10 hover:border-gold/40 transition-all group hover:bg-primary-foreground/5"
+              className="p-8 rounded-lg border border-primary-foreground/10 hover:border-gold/40 transition-all group hover:bg-primary-foreground/5 text-center"
             >
-              <f.icon className="w-10 h-10 text-gold mb-4 group-hover:scale-110 transition-transform" />
+              <img src={f.icon} alt={f.title} className="w-16 h-16 mx-auto mb-4 object-contain group-hover:scale-110 transition-transform" />
               <h3 className="font-display text-xl font-semibold mb-2">{f.title}</h3>
               <p className="text-primary-foreground/60 text-sm">{f.desc}</p>
             </motion.div>
