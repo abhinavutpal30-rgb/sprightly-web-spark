@@ -22,6 +22,7 @@ const Index = () => {
       <ConfigurationSection />
       <MasterPlanSection />
       <AmenitiesSection />
+      <GallerySection />
       <GreenFeaturesSection />
       <LocationSection />
       <AboutSection />
