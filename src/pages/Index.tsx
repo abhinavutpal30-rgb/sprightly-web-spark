@@ -5,6 +5,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ConfigurationSection from "@/components/ConfigurationSection";
 import MasterPlanSection from "@/components/MasterPlanSection";
 import AmenitiesSection from "@/components/AmenitiesSection";
+import GallerySection from "@/components/GallerySection";
 import GreenFeaturesSection from "@/components/GreenFeaturesSection";
 import LocationSection from "@/components/LocationSection";
 import AboutSection from "@/components/AboutSection";
