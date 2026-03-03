@@ -12,7 +12,6 @@ const navLinks = [
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -26,16 +25,16 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-forest-dark/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-background shadow-lg"
+          : "bg-background/95 shadow-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="flex flex-col">
-          <span className="font-display text-2xl font-bold tracking-wider text-primary-foreground">
+          <span className="font-display text-2xl font-bold tracking-wider text-foreground">
             ASSETZ
           </span>
-          <span className="font-display text-xs tracking-[0.35em] text-gold-light -mt-1">
+          <span className="font-display text-xs tracking-[0.35em] text-muted-foreground -mt-1">
             MIZUMI RESERVE
           </span>
         </a>
@@ -46,7 +45,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide text-primary-foreground/80 hover:text-gold transition-colors duration-300"
+              className="text-sm tracking-wide text-foreground/80 hover:text-accent transition-colors duration-300"
             >
               {link.label}
             </a>
@@ -62,7 +61,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary-foreground"
+          className="md:hidden text-foreground"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {mobileOpen ? (
@@ -79,14 +78,14 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-forest-dark/95 backdrop-blur-md px-6 pb-6"
+          className="md:hidden bg-background px-6 pb-6 shadow-lg"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-primary-foreground/80 hover:text-gold border-b border-primary-foreground/10"
+              className="block py-3 text-foreground/80 hover:text-accent border-b border-border"
             >
               {link.label}
             </a>
