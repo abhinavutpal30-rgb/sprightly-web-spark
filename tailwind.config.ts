@@ -56,14 +56,13 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
-        midnight: {
-          DEFAULT: "hsl(var(--midnight))",
-          light: "hsl(var(--midnight-light))",
-          deep: "hsl(var(--midnight-deep))",
+        dark: {
+          DEFAULT: "hsl(var(--dark))",
+          light: "hsl(var(--dark-light))",
         },
-        ivory: {
-          DEFAULT: "hsl(var(--ivory))",
-          dark: "hsl(var(--ivory-dark))",
+        light: {
+          DEFAULT: "hsl(var(--light))",
+          dark: "hsl(var(--light-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -83,20 +82,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

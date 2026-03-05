@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import iconProjects from "@/assets/icon-projects.png";
 import iconSqft from "@/assets/icon-sqft.png";
 import iconUnits from "@/assets/icon-units.png";
@@ -13,43 +12,27 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section className="py-24 px-6 bg-secondary">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-accent tracking-[0.3em] text-sm uppercase mb-3">Legacy</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
-            About Assetz
-          </h2>
-          <div className="w-20 h-0.5 bg-accent mx-auto mt-6" />
-          <p className="mt-6 text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-            Assetz is a human-centric company that consistently sets new benchmarks in the built
-            environment, ensuring a better quality of life for generations to come. Our iterative
-            design philosophy creates ecosystems that are deeply attuned to today's needs while
-            anticipating tomorrow's possibilities. For us, sustainability isn't an afterthought —
-            it's fundamental to our vision.
-          </p>
-        </motion.div>
+    <section className="py-20 px-6 bg-secondary">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="font-display text-3xl md:text-4xl text-center text-foreground mb-2">
+          About Assetz
+        </h2>
+        <div className="flex justify-center my-6">
+          <div className="w-16 h-px bg-border" />
+        </div>
+        <p className="text-center text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">
+          Assetz is a human-centric company that consistently sets new benchmarks in the built
+          environment, ensuring a better quality of life for generations to come.
+        </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-background rounded-lg p-8 text-center border border-border"
-            >
-              <img src={s.icon} alt={s.label} className="w-12 h-12 mx-auto mb-4 object-contain" />
-              <p className="font-display text-4xl font-bold text-accent">{s.value}</p>
-              <p className="font-display text-lg font-semibold text-foreground mt-1">{s.label}</p>
-              <p className="text-sm text-muted-foreground mt-1">{s.sub}</p>
-            </motion.div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-12 border border-border">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-background p-6 text-center">
+              <img src={s.icon} alt={s.label} className="w-8 h-8 mx-auto mb-3 object-contain opacity-50" />
+              <p className="font-display text-2xl font-semibold text-foreground">{s.value}</p>
+              <p className="text-sm text-foreground mt-1">{s.label}</p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">{s.sub}</p>
+            </div>
           ))}
         </div>
       </div>

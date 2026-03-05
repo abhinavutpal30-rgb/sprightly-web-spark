@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import iconClubhouse from "@/assets/icon-clubhouse.png";
 import iconLeisure from "@/assets/icon-leisure.png";
 import iconBalcony from "@/assets/icon-balcony.png";
@@ -7,43 +6,34 @@ import iconCarpet from "@/assets/icon-carpet.png";
 import iconOpenspace from "@/assets/icon-openspace.png";
 
 const features = [
-  { icon: iconClubhouse, title: "~ 63,000+ Sqft Clubhouse", desc: "World-class amenities under one roof" },
-  { icon: iconLeisure, title: "Over 2 Acres for Leisure & Amenities", desc: "Dedicated recreation spaces" },
-  { icon: iconBalcony, title: "Large Living Balconies", desc: "Expansive outdoor living spaces" },
-  { icon: iconPool, title: "Temperature Controlled Pools", desc: "Year-round swimming comfort" },
-  { icon: iconCarpet, title: "~ 75% Carpet Area Efficiency", desc: "Maximized usable living area" },
-  { icon: iconOpenspace, title: "~77% Open Space", desc: "Lush green landscapes & gardens" },
+  { icon: iconClubhouse, title: "~ 63,000+ Sqft Clubhouse" },
+  { icon: iconLeisure, title: "Over 2 Acres for Leisure & Amenities" },
+  { icon: iconBalcony, title: "Large Living Balconies" },
+  { icon: iconPool, title: "Temperature Controlled Pools" },
+  { icon: iconCarpet, title: "~ 75% Carpet Area Efficiency" },
+  { icon: iconOpenspace, title: "~77% Open Space" },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-24 px-6 bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-gold tracking-[0.3em] text-sm uppercase mb-3">Why Mizumi</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold">Key Features</h2>
-          <div className="w-20 h-0.5 bg-accent mx-auto mt-6" />
-        </motion.div>
+    <section id="features" className="py-20 px-6 bg-secondary">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="font-display text-3xl md:text-4xl text-center text-foreground mb-2">
+          Key Features
+        </h2>
+        <div className="flex justify-center my-6">
+          <div className="w-16 h-px bg-border" />
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((f, i) => (
-            <motion.div
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+          {features.map((f) => (
+            <div
               key={f.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 rounded-lg border border-primary-foreground/10 hover:border-gold/40 transition-all group hover:bg-primary-foreground/5 text-center"
+              className="flex flex-col items-center text-center p-6 bg-background border border-border hover:shadow-sm transition-shadow"
             >
-              <img src={f.icon} alt={f.title} className="w-16 h-16 mx-auto mb-4 object-contain group-hover:scale-110 transition-transform" />
-              <h3 className="font-display text-xl font-semibold mb-2">{f.title}</h3>
-              <p className="text-primary-foreground/60 text-sm">{f.desc}</p>
-            </motion.div>
+              <img src={f.icon} alt={f.title} className="w-12 h-12 mb-4 object-contain opacity-70" />
+              <p className="text-sm text-foreground font-medium">{f.title}</p>
+            </div>
           ))}
         </div>
       </div>

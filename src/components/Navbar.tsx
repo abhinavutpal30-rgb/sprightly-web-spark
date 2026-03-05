@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 const navLinks = [
   { label: "Overview", href: "#overview" },
-  { label: "Features", href: "#features" },
   { label: "Configuration", href: "#configuration" },
   { label: "Amenities", href: "#amenities" },
   { label: "Location", href: "#location" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -21,72 +18,71 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-midnight-deep/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-background shadow-sm"
+          : "bg-background/0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex flex-col">
-          <span className="font-display text-2xl font-bold tracking-wider text-primary-foreground">
-            ASSETZ
+        <a href="#" className="flex items-center gap-3">
+          <span className={`font-display text-xl font-bold tracking-wider ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
+            Assetz
           </span>
-          <span className="font-display text-xs tracking-[0.35em] text-gold-light -mt-1">
+          <span className={`text-xs tracking-[0.2em] font-light ${scrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
             MIZUMI RESERVE
           </span>
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide text-primary-foreground/80 hover:text-gold transition-colors duration-300"
+              className={`text-sm tracking-wide transition-colors duration-200 ${
+                scrolled
+                  ? "text-foreground/70 hover:text-foreground"
+                  : "text-primary-foreground/80 hover:text-primary-foreground"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-5 py-2 bg-accent text-accent-foreground text-sm font-medium rounded transition-all hover:brightness-110"
+            className={`px-5 py-2 text-sm font-medium border transition-all ${
+              scrolled
+                ? "border-foreground text-foreground hover:bg-foreground hover:text-background"
+                : "border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground"
+            }`}
           >
-            Enquire Now
+            Download Brochure
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary-foreground"
+          className={`md:hidden ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {mobileOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-midnight-deep/95 backdrop-blur-md px-6 pb-6"
-        >
+        <div className="md:hidden bg-background border-t border-border px-6 pb-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-primary-foreground/80 hover:text-gold border-b border-primary-foreground/10"
+              className="block py-3 text-foreground/70 hover:text-foreground border-b border-border/50 text-sm"
             >
               {link.label}
             </a>
@@ -94,13 +90,13 @@ const Navbar = () => {
           <a
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 block text-center px-5 py-3 bg-accent text-accent-foreground font-medium rounded"
+            className="mt-4 block text-center px-5 py-2.5 bg-foreground text-background text-sm font-medium"
           >
-            Enquire Now
+            Download Brochure
           </a>
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 
