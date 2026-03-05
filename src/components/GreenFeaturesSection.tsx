@@ -60,9 +60,6 @@ const GreenFeaturesSection = () => {
               alt="Eco-friendly living at Mizumi Reserve"
               className="rounded-lg shadow-xl w-full h-[450px] object-cover"
             />
-            <div className="absolute bottom-3 right-3 bg-primary/80 backdrop-blur-sm px-3 py-1 rounded text-xs text-primary-foreground/60">
-              Stock Image
-            </div>
           </motion.div>
 
           <div className="space-y-8">

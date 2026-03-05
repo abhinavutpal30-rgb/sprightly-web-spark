@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Cormorant Garamond', 'Georgia', 'serif'],
-        body: ['DM Sans', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,15 +54,16 @@ export default {
         gold: {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
-        forest: {
-          DEFAULT: "hsl(var(--forest))",
-          light: "hsl(var(--forest-light))",
-          dark: "hsl(var(--forest-dark))",
+        midnight: {
+          DEFAULT: "hsl(var(--midnight))",
+          light: "hsl(var(--midnight-light))",
+          deep: "hsl(var(--midnight-deep))",
         },
-        cream: {
-          DEFAULT: "hsl(var(--cream))",
-          dark: "hsl(var(--cream-dark))",
+        ivory: {
+          DEFAULT: "hsl(var(--ivory))",
+          dark: "hsl(var(--ivory-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

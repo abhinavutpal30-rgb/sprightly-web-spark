@@ -26,7 +26,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-forest-dark/95 backdrop-blur-md shadow-lg"
+          ? "bg-midnight-deep/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -79,7 +79,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-forest-dark/95 backdrop-blur-md px-6 pb-6"
+          className="md:hidden bg-midnight-deep/95 backdrop-blur-md px-6 pb-6"
         >
           {navLinks.map((link) => (
             <a

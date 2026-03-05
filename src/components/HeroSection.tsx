@@ -9,7 +9,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/70 via-forest-dark/40 to-forest-dark/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-midnight-deep/80 via-midnight-deep/40 to-midnight-deep/90" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -29,7 +29,7 @@ const HeroSection = () => {
           className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-primary-foreground leading-tight"
         >
           Mizumi
-          <span className="block font-semibold italic text-gold">Reserve</span>
+          <span className="block font-bold italic text-gold">Reserve</span>
         </motion.h1>
 
         <motion.p
