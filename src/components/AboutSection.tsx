@@ -1,13 +1,10 @@
-import iconProjects from "@/assets/icon-projects.png";
-import iconSqft from "@/assets/icon-sqft.png";
-import iconUnits from "@/assets/icon-units.png";
-import iconAcres from "@/assets/icon-acres.png";
+import { Building, Ruler, Home, MapPin } from "lucide-react";
 
 const stats = [
-  { icon: iconProjects, value: "50+", label: "Projects", sub: "Residential & Commercial" },
-  { icon: iconSqft, value: "50+ Mn", label: "Sq.Ft.", sub: "Developed & Ongoing" },
-  { icon: iconUnits, value: "24,000+", label: "Units", sub: "Delivered & Underway" },
-  { icon: iconAcres, value: "700+", label: "Acres", sub: "Acquired & Licensed" },
+  { icon: Building, value: "50+", label: "Projects", sub: "Residential & Commercial" },
+  { icon: Ruler, value: "50+ Mn", label: "Sq.Ft.", sub: "Developed & Ongoing" },
+  { icon: Home, value: "24,000+", label: "Units", sub: "Delivered & Underway" },
+  { icon: MapPin, value: "700+", label: "Acres", sub: "Acquired & Licensed" },
 ];
 
 const AboutSection = () => {
@@ -28,7 +25,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-12 border border-border">
           {stats.map((s) => (
             <div key={s.label} className="bg-background p-6 text-center">
-              <img src={s.icon} alt={s.label} className="w-8 h-8 mx-auto mb-3 object-contain opacity-50" />
+              <s.icon className="w-7 h-7 mx-auto mb-3 text-muted-foreground" strokeWidth={1.2} />
               <p className="font-display text-2xl font-semibold text-foreground">{s.value}</p>
               <p className="text-sm text-foreground mt-1">{s.label}</p>
               <p className="text-[11px] text-muted-foreground mt-0.5">{s.sub}</p>

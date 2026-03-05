@@ -1,17 +1,12 @@
-import iconClubhouse from "@/assets/icon-clubhouse.png";
-import iconLeisure from "@/assets/icon-leisure.png";
-import iconBalcony from "@/assets/icon-balcony.png";
-import iconPool from "@/assets/icon-pool.png";
-import iconCarpet from "@/assets/icon-carpet.png";
-import iconOpenspace from "@/assets/icon-openspace.png";
+import { Building2, TreePine, PanelTop, Waves, Maximize, Leaf } from "lucide-react";
 
 const features = [
-  { icon: iconClubhouse, title: "~ 63,000+ Sqft Clubhouse" },
-  { icon: iconLeisure, title: "Over 2 Acres for Leisure & Amenities" },
-  { icon: iconBalcony, title: "Large Living Balconies" },
-  { icon: iconPool, title: "Temperature Controlled Pools" },
-  { icon: iconCarpet, title: "~ 75% Carpet Area Efficiency" },
-  { icon: iconOpenspace, title: "~77% Open Space" },
+  { icon: Building2, title: "~ 63,000+ Sqft Clubhouse" },
+  { icon: TreePine, title: "Over 2 Acres for Leisure & Amenities" },
+  { icon: PanelTop, title: "Large Living Balconies" },
+  { icon: Waves, title: "Temperature Controlled Pools" },
+  { icon: Maximize, title: "~ 75% Carpet Area Efficiency" },
+  { icon: Leaf, title: "~77% Open Space" },
 ];
 
 const FeaturesSection = () => {
@@ -31,7 +26,7 @@ const FeaturesSection = () => {
               key={f.title}
               className="flex flex-col items-center text-center p-6 bg-background border border-border hover:shadow-sm transition-shadow"
             >
-              <img src={f.icon} alt={f.title} className="w-12 h-12 mb-4 object-contain opacity-70" />
+              <f.icon className="w-10 h-10 mb-4 text-muted-foreground" strokeWidth={1.2} />
               <p className="text-sm text-foreground font-medium">{f.title}</p>
             </div>
           ))}

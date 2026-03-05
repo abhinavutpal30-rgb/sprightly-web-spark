@@ -1,21 +1,19 @@
 import greenImg from "@/assets/green-features.jpg";
-import iconWater from "@/assets/icon-water.png";
-import iconEnergy from "@/assets/icon-energy.png";
-import iconWaste from "@/assets/icon-waste.png";
+import { Droplets, Zap, Recycle } from "lucide-react";
 
 const greenFeatures = [
   {
-    icon: iconWater,
+    icon: Droplets,
     title: "Water Conservation",
     desc: "Advanced rainwater harvesting, dual plumbing systems, and water-efficient fixtures.",
   },
   {
-    icon: iconEnergy,
+    icon: Zap,
     title: "Energy Efficiency",
     desc: "Solar-powered common areas, LED lighting, and EV charging stations.",
   },
   {
-    icon: iconWaste,
+    icon: Recycle,
     title: "Waste Management",
     desc: "Zero-waste approach, organic waste converters, and efficient waste segregation.",
   },
@@ -45,7 +43,7 @@ const GreenFeaturesSection = () => {
             {greenFeatures.map((f) => (
               <div key={f.title} className="flex gap-4">
                 <div className="flex-shrink-0 w-10 h-10 bg-background border border-border flex items-center justify-center">
-                  <img src={f.icon} alt={f.title} className="w-6 h-6 object-contain opacity-60" />
+                  <f.icon className="w-5 h-5 text-muted-foreground" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-display text-lg text-foreground mb-1">{f.title}</h3>
