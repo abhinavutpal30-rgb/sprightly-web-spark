@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { GraduationCap, Building, ShoppingBag, Heart } from "lucide-react";
 
 const categories = [
@@ -46,48 +45,35 @@ const categories = [
 
 const LocationSection = () => {
   return (
-    <section id="location" className="py-24 px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-accent tracking-[0.3em] text-sm uppercase mb-3">Connectivity</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
-            Prime Location, Unmatched Access
-          </h2>
-          <div className="w-20 h-0.5 bg-accent mx-auto mt-6" />
-        </motion.div>
+    <section id="location" className="py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="font-display text-3xl md:text-4xl text-center text-foreground mb-2">
+          Location Advantage
+        </h2>
+        <div className="flex justify-center my-6">
+          <div className="w-16 h-px bg-border" />
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card border border-border rounded-lg overflow-hidden"
-            >
-              <div className="p-5 bg-primary text-primary-foreground flex items-center gap-3">
-                <cat.icon className="w-5 h-5 text-gold" />
-                <h3 className="font-display text-lg font-semibold">{cat.title}</h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border mt-10 border border-border">
+          {categories.map((cat) => (
+            <div key={cat.title} className="bg-background">
+              <div className="px-5 py-4 border-b border-border flex items-center gap-2">
+                <cat.icon className="w-4 h-4 text-muted-foreground" />
+                <h3 className="font-display text-base text-foreground">{cat.title}</h3>
               </div>
-              <div className="p-5 space-y-3">
+              <div className="px-5 py-4 space-y-3">
                 {cat.places.map((p) => (
-                  <div key={p.name} className="flex justify-between items-center text-sm">
-                    <span className="text-foreground">{p.name}</span>
-                    <span className="text-accent font-medium whitespace-nowrap ml-2">{p.time}</span>
+                  <div key={p.name} className="flex justify-between items-center text-xs">
+                    <span className="text-foreground/80">{p.name}</span>
+                    <span className="text-muted-foreground whitespace-nowrap ml-2">{p.time}</span>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-8">
+        <p className="text-center text-[10px] text-muted-foreground mt-4">
           ETA as per Google Maps. May vary depending on time of day and mode of transport.
         </p>
       </div>
