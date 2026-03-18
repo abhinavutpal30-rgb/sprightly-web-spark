@@ -1,18 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import citySkyline from "@/assets/city-skyline.jpg";
 
 const CTASection = () => {
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Full background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&auto=format')" }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${citySkyline})` }} />
       <div className="absolute inset-0 bg-foreground/85 backdrop-blur-sm" />
 
-      {/* Animated orbs */}
       <motion.div
         className="absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"
         animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
@@ -37,7 +33,6 @@ const CTASection = () => {
         </h2>
         <p className="text-background/40 text-base leading-relaxed max-w-xl mx-auto mb-12">
           Start your search with us today and unlock the door to your dream home.
-          With our extensive listings and personalized service, we make it effortless.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link

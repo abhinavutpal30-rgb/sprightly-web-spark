@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import aboutTeam from "@/assets/about-team.jpg";
 
 const counters = [
   { end: 500, suffix: "+", label: "Properties Sold" },
@@ -13,7 +14,6 @@ const AnimatedCounter = ({ end, suffix }: { end: number; suffix: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     if (!isInView) return;
     let frame = 0;
@@ -25,19 +25,16 @@ const AnimatedCounter = ({ end, suffix }: { end: number; suffix: string }) => {
     }, 25);
     return () => clearInterval(counter);
   }, [isInView, end]);
-
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
 const AboutPreview = () => {
   return (
     <section className="py-28 px-6 bg-background relative overflow-hidden">
-      {/* Decorative background */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
-          {/* Image side */}
           <motion.div
             className="lg:col-span-5 relative"
             initial={{ opacity: 0, x: -60 }}
@@ -46,14 +43,9 @@ const AboutPreview = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="relative">
-              <div className="aspect-[3/4] rounded-3xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format"
-                  alt="Modern luxury property"
-                  className="w-full h-full object-cover"
-                />
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-elevated">
+                <img src={aboutTeam} alt="GharFinder Team" className="w-full h-full object-cover" />
               </div>
-              {/* Floating card */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -64,12 +56,10 @@ const AboutPreview = () => {
                 <p className="font-display text-4xl font-bold text-primary">10+</p>
                 <p className="text-xs text-background/60 mt-1 tracking-wide uppercase">Years of Excellence</p>
               </motion.div>
-              {/* Corner accent */}
               <div className="absolute -top-4 -left-4 w-20 h-20 border-l-2 border-t-2 border-primary/30 rounded-tl-3xl" />
             </div>
           </motion.div>
 
-          {/* Content side */}
           <motion.div
             className="lg:col-span-7"
             initial={{ opacity: 0, x: 60 }}
@@ -93,7 +83,6 @@ const AboutPreview = () => {
               exciting, not exhausting.
             </p>
 
-            {/* Animated counters */}
             <div className="grid grid-cols-3 gap-8 mb-10 pb-10 border-b border-border">
               {counters.map((c) => (
                 <div key={c.label}>
