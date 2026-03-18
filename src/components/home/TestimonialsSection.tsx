@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const testimonials = [
-  { name: "Naveen J.", role: "Homeowner", text: "GharFinder doesn't just sell properties — they create experiences. My family and I are beyond grateful for their assistance in finding our forever home.", avatar: "N" },
+  { name: "Naveen J.", role: "Homeowner", text: "IRVANA doesn't just sell properties — they create experiences. My family and I are beyond grateful for their assistance in finding our forever home.", avatar: "N" },
   { name: "Akhil R.", role: "Investor", text: "The team truly goes above and beyond. Their attention to detail and commitment to customer satisfaction are unmatched in the industry.", avatar: "A" },
   { name: "Rakesh V.", role: "First-time Buyer", text: "As a first-time homebuyer, I had many concerns. They patiently guided me through every step, making it smooth and stress-free.", avatar: "R" },
   { name: "Monica S.", role: "Homeowner", text: "Finding my dream home was a breeze! The team was attentive, professional, and truly understood my needs from day one.", avatar: "M" },
