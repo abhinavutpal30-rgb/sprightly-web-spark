@@ -14,9 +14,9 @@ const Footer = () => {
           <div className="md:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-base">G</span>
+                <span className="text-primary-foreground font-display font-bold text-base">I</span>
               </div>
-              <span className="font-display text-2xl font-bold text-background">GharFinder</span>
+              <span className="font-display text-2xl font-bold text-background">IRVANA</span>
             </Link>
             <p className="text-sm leading-relaxed text-background/35 mb-8 max-w-xs">
               Your trusted partner in finding the perfect property. We make real estate simple, transparent, and rewarding.
