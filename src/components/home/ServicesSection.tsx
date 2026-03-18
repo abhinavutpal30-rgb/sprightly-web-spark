@@ -1,4 +1,5 @@
 import { Search, Home, Landmark, Paintbrush, Handshake, TrendingUp } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const services = [
   { icon: Search, title: "Find Your Property", desc: "Browse our wide range of plots, villas, and apartments tailored to your needs." },
@@ -11,25 +12,29 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 px-6 bg-secondary">
+    <section className="py-24 px-6 bg-secondary">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-primary text-sm font-medium tracking-wide uppercase mb-2">What We Do</p>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground">Our Services</h2>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">What We Do</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground">Our Services</h2>
+            <p className="text-muted-foreground text-[15px] mt-4 max-w-xl mx-auto">
+              End-to-end real estate solutions designed to make your property journey seamless.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="group bg-background rounded-xl p-8 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <s.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+          {services.map((s, i) => (
+            <ScrollReveal key={s.title} delay={i * 0.08}>
+              <div className="group bg-background rounded-2xl p-8 border border-border hover:border-primary/20 hover:shadow-elevated transition-all duration-500 h-full">
+                <div className="w-14 h-14 bg-primary/8 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/15 group-hover:shadow-sm transition-all duration-300">
+                  <s.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-display text-lg text-foreground mb-2.5">{s.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
               </div>
-              <h3 className="font-display text-lg text-foreground mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
