@@ -102,7 +102,7 @@ const About = () => {
               Your Trusted <span className="text-primary italic">Real Estate</span> Partner
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed mb-5">
-              Founded with a vision to simplify real estate, GharFinder has grown into one of Bangalore's most trusted property consultancies. We believe everyone deserves a home that matches their dreams.
+              Founded with a vision to simplify real estate, IRVANA has grown into one of Bangalore's most trusted property consultancies. We believe everyone deserves a home that matches their dreams.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-10">
               Our team of experienced professionals combines deep market knowledge with genuine care, ensuring every client finds not just a property, but a place they can truly call home.
