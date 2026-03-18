@@ -9,7 +9,7 @@ interface ScrollRevealProps {
   duration?: number;
 }
 
-const getVariants = (direction: string, duration: number): Variants => {
+const getVariants = (direction: string, duration: number) => {
   const hidden = {
     opacity: 0,
     ...(direction === "up" && { y: 40 }),
