@@ -74,11 +74,11 @@ const Footer = () => {
                 </div>
                 +91 99999 99999
               </a>
-              <a href="mailto:info@gharfinder.com" className="flex items-center gap-3 text-sm text-background/35 hover:text-primary transition-colors group">
+              <a href="mailto:info@irvana.in" className="flex items-center gap-3 text-sm text-background/35 hover:text-primary transition-colors group">
                 <div className="w-9 h-9 rounded-full border border-background/10 group-hover:border-primary/30 flex items-center justify-center flex-shrink-0 transition-colors">
                   <Mail className="w-3.5 h-3.5" />
                 </div>
-                info@gharfinder.com
+                info@irvana.in
               </a>
               <div className="flex items-start gap-3 text-sm text-background/35">
                 <div className="w-9 h-9 rounded-full border border-background/10 flex items-center justify-center flex-shrink-0 mt-0.5">
