@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Properties", href: "/properties" },
   { label: "Blog", href: "/blog" },
@@ -32,19 +32,23 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         showTransparent
-          ? "bg-transparent"
-          : "bg-background/80 backdrop-blur-xl shadow-soft border-b border-border/50"
+          ? "bg-transparent py-6"
+          : "bg-background/90 backdrop-blur-2xl shadow-[0_1px_0_hsl(var(--border)/0.5)] py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-premium transition-shadow duration-300">
-            <span className="text-primary-foreground font-bold text-sm">G</span>
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 ${
+            showTransparent 
+              ? "bg-white/10 backdrop-blur-sm border border-white/20" 
+              : "bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
+          }`}>
+            <span className={`font-display font-bold text-base ${showTransparent ? "text-white" : "text-primary-foreground"}`}>G</span>
           </div>
           <span
-            className={`font-display text-xl font-bold tracking-wide transition-colors duration-300 ${
+            className={`font-display text-xl font-bold tracking-wide transition-colors duration-500 ${
               showTransparent ? "text-white" : "text-foreground"
             }`}
           >
@@ -52,39 +56,34 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`relative text-[13px] tracking-wide font-medium transition-colors duration-200 ${
-                location.pathname === link.href
-                  ? showTransparent
-                    ? "text-white"
-                    : "text-primary"
-                  : showTransparent
-                  ? "text-white/75 hover:text-white"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link.label}
-              {location.pathname === link.href && (
-                <motion.span
-                  layoutId="navbar-indicator"
-                  className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ${
-                    showTransparent ? "bg-white" : "bg-primary"
-                  }`}
-                />
-              )}
-            </Link>
-          ))}
+        <div className="hidden lg:flex items-center gap-1">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`relative px-4 py-2 text-[13px] tracking-wide font-medium rounded-lg transition-all duration-300 ${
+                  isActive
+                    ? showTransparent
+                      ? "text-white bg-white/10"
+                      : "text-primary bg-primary/8"
+                    : showTransparent
+                    ? "text-white/70 hover:text-white hover:bg-white/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+919999999999"
             className={`flex items-center gap-2 text-[13px] font-medium transition-colors ${
-              showTransparent ? "text-white/85" : "text-muted-foreground hover:text-foreground"
+              showTransparent ? "text-white/70 hover:text-white" : "text-muted-foreground hover:text-foreground"
             }`}
           >
             <Phone className="w-3.5 h-3.5" />
@@ -92,7 +91,7 @@ const Navbar = () => {
           </a>
           <Link
             to="/contact"
-            className="group flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-[13px] font-medium rounded-xl hover:bg-primary/90 transition-all duration-300 hover:shadow-premium"
+            className="group flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground text-[13px] font-semibold rounded-full hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] transition-all duration-500"
           >
             Book Appointment
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -101,9 +100,11 @@ const Navbar = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-1 transition-colors ${showTransparent ? "text-white" : "text-foreground"}`}
+          className={`lg:hidden p-2 rounded-lg transition-colors ${
+            showTransparent ? "text-white hover:bg-white/10" : "text-foreground hover:bg-secondary"
+          }`}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
@@ -113,9 +114,9 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 overflow-hidden"
+            className="lg:hidden bg-background border-t border-border/50 overflow-hidden"
           >
-            <div className="px-6 pb-6 pt-2">
+            <div className="px-6 pb-6 pt-3">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -141,7 +142,7 @@ const Navbar = () => {
                 </a>
                 <Link
                   to="/contact"
-                  className="block text-center px-5 py-3 bg-primary text-primary-foreground text-sm font-medium rounded-xl"
+                  className="block text-center px-5 py-3 bg-primary text-primary-foreground text-sm font-semibold rounded-full"
                 >
                   Book Appointment
                 </Link>
