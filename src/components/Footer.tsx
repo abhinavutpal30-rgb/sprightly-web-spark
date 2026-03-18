@@ -14,9 +14,9 @@ const Footer = () => {
           <div className="md:col-span-4">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-base">G</span>
+                <span className="text-primary-foreground font-display font-bold text-base">I</span>
               </div>
-              <span className="font-display text-2xl font-bold text-background">GharFinder</span>
+              <span className="font-display text-2xl font-bold text-background">IRVANA</span>
             </Link>
             <p className="text-sm leading-relaxed text-background/35 mb-8 max-w-xs">
               Your trusted partner in finding the perfect property. We make real estate simple, transparent, and rewarding.
@@ -74,11 +74,11 @@ const Footer = () => {
                 </div>
                 +91 99999 99999
               </a>
-              <a href="mailto:info@gharfinder.com" className="flex items-center gap-3 text-sm text-background/35 hover:text-primary transition-colors group">
+              <a href="mailto:info@irvana.in" className="flex items-center gap-3 text-sm text-background/35 hover:text-primary transition-colors group">
                 <div className="w-9 h-9 rounded-full border border-background/10 group-hover:border-primary/30 flex items-center justify-center flex-shrink-0 transition-colors">
                   <Mail className="w-3.5 h-3.5" />
                 </div>
-                info@gharfinder.com
+                info@irvana.in
               </a>
               <div className="flex items-start gap-3 text-sm text-background/35">
                 <div className="w-9 h-9 rounded-full border border-background/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -93,7 +93,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-background/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-background/20 text-xs">
-            © {new Date().getFullYear()} GharFinder. All rights reserved.
+            © {new Date().getFullYear()} IRVANA. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service"].map((t) => (

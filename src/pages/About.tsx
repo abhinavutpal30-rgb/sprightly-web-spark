@@ -64,7 +64,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-5"
           >
-            About GharFinder
+            About IRVANA
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -102,7 +102,7 @@ const About = () => {
               Your Trusted <span className="text-primary italic">Real Estate</span> Partner
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed mb-5">
-              Founded with a vision to simplify real estate, GharFinder has grown into one of Bangalore's most trusted property consultancies. We believe everyone deserves a home that matches their dreams.
+              Founded with a vision to simplify real estate, IRVANA has grown into one of Bangalore's most trusted property consultancies. We believe everyone deserves a home that matches their dreams.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-10">
               Our team of experienced professionals combines deep market knowledge with genuine care, ensuring every client finds not just a property, but a place they can truly call home.
@@ -140,7 +140,7 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-elevated">
-              <img src={aboutTeam} alt="GharFinder Team" className="w-full h-full object-cover" />
+              <img src={aboutTeam} alt="IRVANA Team" className="w-full h-full object-cover" />
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

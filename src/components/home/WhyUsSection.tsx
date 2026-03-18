@@ -48,7 +48,7 @@ const WhyUsSection = () => {
             <div className="h-[2px] w-12 bg-primary mb-6" />
             <p className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-4">Why Choose Us</p>
             <h2 className="font-display text-4xl md:text-5xl text-background leading-[1.15] mb-6">
-              The GharFinder <span className="text-primary italic">Advantage</span>
+              The IRVANA <span className="text-primary italic">Advantage</span>
             </h2>
             <p className="text-background/40 text-base leading-relaxed max-w-lg">
               We combine deep market expertise with genuine care to deliver an unmatched experience in real estate.

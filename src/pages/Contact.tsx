@@ -36,7 +36,7 @@ const Contact = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { icon: Phone, label: "Call Us", value: "+91 99999 99999", href: "tel:+919999999999" },
-              { icon: Mail, label: "Email Us", value: "info@gharfinder.com", href: "mailto:info@gharfinder.com" },
+              { icon: Mail, label: "Email Us", value: "info@irvana.in", href: "mailto:info@irvana.in" },
               { icon: MapPin, label: "Visit Us", value: "123 Business Park, Whitefield, Bangalore" },
               { icon: Clock, label: "Working Hours", value: "Mon – Sat: 9AM – 7PM" },
             ].map((c, i) => (
