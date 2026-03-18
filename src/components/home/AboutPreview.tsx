@@ -1,61 +1,121 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, ArrowRight } from "lucide-react";
-import ScrollReveal from "@/components/ScrollReveal";
+import { ArrowRight } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 
-const highlights = [
-  "Modern and Premium Spaces",
-  "Great Investment Opportunities",
-  "Luxurious Living Experience",
-  "Prime Bangalore Locations",
+const counters = [
+  { end: 500, suffix: "+", label: "Properties Sold" },
+  { end: 10, suffix: "+", label: "Years Experience" },
+  { end: 200, suffix: "+", label: "Happy Families" },
 ];
+
+const AnimatedCounter = ({ end, suffix }: { end: number; suffix: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let frame = 0;
+    const totalFrames = 60;
+    const counter = setInterval(() => {
+      frame++;
+      setCount(Math.round((frame / totalFrames) * end));
+      if (frame >= totalFrames) clearInterval(counter);
+    }, 25);
+    return () => clearInterval(counter);
+  }, [isInView, end]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
 
 const AboutPreview = () => {
   return (
-    <section className="py-24 px-6 bg-background">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-20 items-center">
-        <ScrollReveal direction="left">
-          <div className="relative">
-            <div className="aspect-[4/5] bg-secondary rounded-2xl overflow-hidden shadow-elevated">
-              <img
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format"
-                alt="Modern luxury property"
-                className="w-full h-full object-cover"
-              />
+    <section className="py-28 px-6 bg-background relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          {/* Image side */}
+          <motion.div
+            className="lg:col-span-5 relative"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="relative">
+              <div className="aspect-[3/4] rounded-3xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format"
+                  alt="Modern luxury property"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Floating card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="absolute -bottom-6 -right-6 md:-right-10 bg-foreground text-background px-8 py-6 rounded-2xl shadow-2xl"
+              >
+                <p className="font-display text-4xl font-bold text-primary">10+</p>
+                <p className="text-xs text-background/60 mt-1 tracking-wide uppercase">Years of Excellence</p>
+              </motion.div>
+              {/* Corner accent */}
+              <div className="absolute -top-4 -left-4 w-20 h-20 border-l-2 border-t-2 border-primary/30 rounded-tl-3xl" />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-7 py-5 rounded-2xl shadow-premium">
-              <p className="font-display text-3xl font-bold">10+</p>
-              <p className="text-xs text-primary-foreground/80 mt-0.5">Years Experience</p>
-            </div>
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/20 rounded-2xl" />
-          </div>
-        </ScrollReveal>
+          </motion.div>
 
-        <ScrollReveal direction="right">
-          <div>
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-3">About Us</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-5 leading-tight">
-              Your Journey of Property Ownership Starts Here
+          {/* Content side */}
+          <motion.div
+            className="lg:col-span-7"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="h-[2px] w-12 bg-primary mb-6" />
+            <p className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-4">About Us</p>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-[1.15]">
+              Redefining the Way You
+              <span className="text-primary italic"> Find Home</span>
             </h2>
-            <p className="text-muted-foreground text-[15px] leading-relaxed mb-8">
-              We are a human-centric real estate consultancy dedicated to making property buying, selling, and investing a seamless experience. With deep market knowledge and personalized service, we guide you every step of the way.
+            <p className="text-muted-foreground text-base leading-relaxed mb-5 max-w-xl">
+              We are a human-centric real estate consultancy dedicated to making property buying, selling,
+              and investing a seamless experience. With deep market knowledge and personalized service,
+              we guide you every step of the way.
             </p>
-            <div className="grid grid-cols-2 gap-4 mb-10">
-              {highlights.map((h) => (
-                <div key={h} className="flex items-center gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="text-sm text-foreground font-medium">{h}</span>
+            <p className="text-muted-foreground text-base leading-relaxed mb-10 max-w-xl">
+              Our team combines industry expertise with genuine care — because finding a home should feel
+              exciting, not exhausting.
+            </p>
+
+            {/* Animated counters */}
+            <div className="grid grid-cols-3 gap-8 mb-10 pb-10 border-b border-border">
+              {counters.map((c) => (
+                <div key={c.label}>
+                  <p className="font-display text-4xl font-bold text-foreground">
+                    <AnimatedCounter end={c.end} suffix={c.suffix} />
+                  </p>
+                  <p className="text-muted-foreground text-xs mt-1 tracking-wide uppercase font-medium">{c.label}</p>
                 </div>
               ))}
             </div>
+
             <Link
               to="/about"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground text-sm font-medium rounded-xl hover:bg-primary/90 transition-all duration-300 hover:shadow-premium"
+              className="group inline-flex items-center gap-3 text-sm font-semibold text-foreground hover:text-primary transition-colors"
             >
-              Learn More
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <span className="border-b-2 border-foreground group-hover:border-primary transition-colors pb-0.5">
+                Learn Our Story
+              </span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
-        </ScrollReveal>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
