@@ -45,14 +45,14 @@ const Navbar = () => {
               ? "bg-white/10 backdrop-blur-sm border border-white/20" 
               : "bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
           }`}>
-            <span className={`font-display font-bold text-base ${showTransparent ? "text-white" : "text-primary-foreground"}`}>G</span>
+            <span className={`font-display font-bold text-base ${showTransparent ? "text-white" : "text-primary-foreground"}`}>I</span>
           </div>
           <span
             className={`font-display text-xl font-bold tracking-wide transition-colors duration-500 ${
               showTransparent ? "text-white" : "text-foreground"
             }`}
           >
-            GharFinder
+            IRVANA
           </span>
         </Link>
 

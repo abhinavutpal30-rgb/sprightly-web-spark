@@ -93,7 +93,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-background/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-background/20 text-xs">
-            © {new Date().getFullYear()} GharFinder. All rights reserved.
+            © {new Date().getFullYear()} IRVANA. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service"].map((t) => (

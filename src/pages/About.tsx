@@ -140,7 +140,7 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-elevated">
-              <img src={aboutTeam} alt="GharFinder Team" className="w-full h-full object-cover" />
+              <img src={aboutTeam} alt="IRVANA Team" className="w-full h-full object-cover" />
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
