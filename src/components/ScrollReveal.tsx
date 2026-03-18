@@ -23,7 +23,7 @@ const getVariants = (direction: string, duration: number): Variants => {
     y: 0,
     x: 0,
     scale: 1,
-    transition: { duration, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
   };
 
   return { hidden, visible };
